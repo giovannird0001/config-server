@@ -7,5 +7,5 @@ RUN mvn -f /home/app/pom.xml clean package
 # Package stage
 FROM openjdk:17-jdk-slim
 COPY --from=build /home/app/target/config-server-0.0.1-SNAPSHOT.jar /usr/local/lib/config-server.jar
-EXPOSE 8761
+EXPOSE 8888
 ENTRYPOINT ["java", "-jar", "/usr/local/lib/config-server.jar"]
